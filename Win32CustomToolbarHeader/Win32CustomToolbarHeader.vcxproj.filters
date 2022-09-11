@@ -31,10 +31,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Win32CustomToolbarHeader.cpp">
+    <ClCompile Include="Win32CustomToolbarHeader.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="toolbar.cpp">
+    <ClCompile Include="toolbar.c">
       <Filter>Fichiers sources\Win32Controls</Filter>
     </ClCompile>
   </ItemGroup>

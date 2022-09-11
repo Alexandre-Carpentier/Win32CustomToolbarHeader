@@ -134,8 +134,8 @@
     <ClInclude Include="Win32CustomToolbarHeader.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="toolbar.cpp" />
-    <ClCompile Include="Win32CustomToolbarHeader.cpp" />
+    <ClCompile Include="toolbar.c" />
+    <ClCompile Include="Win32CustomToolbarHeader.c" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Win32CustomToolbarHeader.rc" />

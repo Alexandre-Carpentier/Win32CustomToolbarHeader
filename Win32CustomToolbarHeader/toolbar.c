@@ -6,7 +6,7 @@ HWND CreateCustomToolbar(HWND hWndParent)
     // Create the toolbar window.
     HWND hWndToolbar = CreateWindowEx(0, TOOLBARCLASSNAME, NULL,
         WS_CHILD | WS_VISIBLE | WS_BORDER, 0, 0, 0, 0,
-        hWndParent, NULL, GetModuleHandle(NULL), nullptr);
+        hWndParent, NULL, GetModuleHandle(NULL), NULL);
 
     if (hWndToolbar == NULL)
         return NULL;
@@ -15,7 +15,7 @@ HWND CreateCustomToolbar(HWND hWndParent)
     HIMAGELIST hCustomImageList = NULL;
 
     // Set the number of images
-    const int nElements = 5;
+    #define nElements  5
 
     // Create the custom image list.
     hCustomImageList = ImageList_Create(32, 32,                   // Dimensions of individual bitmaps.  
@@ -26,8 +26,7 @@ HWND CreateCustomToolbar(HWND hWndParent)
     HIMAGELIST hCustomImageListOld = (HIMAGELIST)SendMessage(hWndToolbar, TB_SETIMAGELIST, 0, (LPARAM)hCustomImageList);
     if (NULL == hCustomImageListOld)
     {
-        //ErrorExit();
-        DWORD dwErr = ::GetLastError();
+        DWORD dwErr = GetLastError(); // TODO: investigate on this issue: return invalid descriptor code 6
     }
 
     HBITMAP hbmp1 = (HBITMAP)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_BITMAP1), IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION | LR_SHARED);
